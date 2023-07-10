@@ -1,0 +1,47 @@
+/**
+ * Typography
+ * =================================
+ */
+
+
+body {
+  font-family: $font-family-base;
+}
+
+p {
+  font-family: $font-family-base;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: $font-family-headings;
+  line-height: $line-height-headings;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+}
+
+strong,
+b {
+  font-weight: $font-weight-bold;
+}
+
+
+/**
+ * Utilities
+ */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
