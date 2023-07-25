@@ -1,0 +1,175 @@
+@import 'abstracts/variables', 'abstracts/colors';
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: $destaque;
+  height: 20rem;
+
+  .content {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .texto {
+      margin-top: $size-l;
+    }
+  }
+}
+
+.w-70 {
+  width: 60%;
+
+  .carousel-control-next-icon {
+    background-image: url('../../../assets/icons/arrow_forward.png');
+  }
+
+  .carousel-control-prev-icon {
+    background-image: url('../../../assets/icons/arrow_back.png');
+  }
+
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.562);
+}
+
+.col-dois {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: $size-xl;
+  margin-bottom: $size-xl;
+  width: 100%;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+
+    .superior {
+      .texto {
+        margin-bottom: $size-s;
+      }
+    }
+
+    .inferior {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .img-legenda {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 49%;
+
+        img {
+          width:100% !important;
+        }
+      }
+
+      img {
+        position: inherit !important;
+        width: 49% !important;
+      }
+    }
+  }
+}
+
+.col-metade {
+  margin-top: $size-xl;
+  margin-bottom: $size-xl;
+
+  .content {
+
+    .col-info {
+      h3 {
+        margin-bottom: $size-s;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  .col-metade {
+    .content {
+      width: 90%;
+    }
+  }
+
+  .col-dois {
+    .content {
+      width: 90%;
+    }
+  }
+
+  .intro {
+    height: 100%;
+    padding: $size-m 0 $size-m 0;
+
+    .content {
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (max-width: 840px) {
+
+  .w-70 {
+    width: 100%;
+  }
+
+  .col-metade {
+    .superior {
+      flex-direction: column-reverse;
+    }
+
+    .inferior {
+      flex-direction: column;
+    }
+
+    .content {
+
+      .direita {
+        margin-left: 0;
+      }
+
+      .esquerda {
+        margin-right: 0;
+        margin-bottom: $size-m;
+      }
+
+      .col-info {
+        width: 100% !important;
+      }
+
+      .imagem {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .col-dois {
+    .content {
+      .inferior {
+        width: 100%;
+        flex-direction: column;
+
+        img {
+          width: 100% !important;
+        }
+
+        .space-right {
+          margin-right: 0;
+          margin-bottom: $size-m;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import 'abstracts/colors', 'abstracts/variables';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $footer;
+
+  .content {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $size-l;
+    margin-bottom: $size-l;
+
+    .info {
+      display: flex;
+      width: 100%;
+
+      .coluna {
+        width: 25%;
+      }
+
+      h4 {
+        color: white;
+        margin-bottom: $size-xs;
+      }
+
+      a,
+      p {
+        color: $texto-secundario;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .material-symbols-outlined {
+        font-size: 14px !important;
+      }
+    }
+  }
+
+  .company-name {
+    background-color: $footer-destaque;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .content {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .content {
+    align-items: flex-start !important;
+    flex-direction: column;
+
+    .info {
+      flex-direction: column;
+
+      .coluna {
+        width: 100% !important;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .company-name {
+    p {
+      font-size: 0.75rem;
+    }
+  }
+}
+

@@ -1,0 +1,10 @@
+.titulo-terciario {
+  h3 {
+    color: black;
+  }
+
+  h3 em {
+    color: $cor-principal;
+    font-style: normal;
+  }
+}

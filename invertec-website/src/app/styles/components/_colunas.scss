@@ -1,0 +1,65 @@
+.col-metade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+
+  .titulo-secundario {
+    width: 80%;
+    margin-bottom: $size-xl;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+
+    .col-info {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .texto {
+        margin-bottom: $size-s;
+      }
+
+      .automacao {
+        margin-top: $size-m;
+      }
+    }
+
+    .esquerda {
+      margin-right: $size-l;
+    }
+
+    .direita {
+      margin-left: $size-l;
+    }
+
+    .imagem {
+      width: 50%;
+      z-index: 1;
+
+      img {
+        position: inherit !important;
+      }
+    }
+
+    .sobre-nos img {
+      box-shadow: $destaque 50px -50px, rgb(255, 255, 255) 40px -40px 0px -3px;
+    }
+  }
+
+  .quadrado {
+    background-color: $destaque;
+    height: 65px;
+    width: 70%;
+    top: 95%;
+    position: absolute;
+  }
+
+}

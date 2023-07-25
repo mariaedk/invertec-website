@@ -1,1 +1,37 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="content">
+    <div class="logo">
+      <img ngSrc="../../../assets/logo/invertec-logo.png" width="120" height="60" priority>
+    </div>
+    <div class="links">
+      <a routerLink="/home" routerLinkActive="active-link" class="link">Home</a>
+      <a routerLink="/quem-somos" routerLinkActive="active-link" class="link">Quem somos</a>
+      <a routerLink="/automacao-industrial" routerLinkActive="active-link" class="link">Automação industrial</a>
+      <a routerLink="/servicos" routerLinkActive="active-link" class="link">Serviços</a>
+      <a routerLink="/contato" routerLinkActive="active-link" class="link">Contato</a>
+    </div>
+    <div class="menu-responsive">
+      <button class="no-style" (click)="responsiveNavbar()">
+        <ng-container *ngIf="!responsive; else closeMenu">
+          <span class="material-symbols-outlined">
+            menu
+          </span>
+        </ng-container>
+        <ng-template #closeMenu>
+          <span class="material-symbols-outlined">
+            close
+          </span>
+        </ng-template>
+      </button>
+    </div>
+  </div>
+  <ng-container *ngIf="responsive">
+    <div [ngClass]="{'hide-responsive-links': !responsive, 'responsive-links': responsive}">
+      <a routerLink="/home" routerLinkActive="active-link" class="link">Home</a>
+      <a routerLink="/quem-somos" routerLinkActive="active-link" class="link">Quem somos</a>
+      <a routerLink="/automacao-industrial" routerLinkActive="active-link" class="link">Automação industrial</a>
+      <a routerLink="/servicos" routerLinkActive="active-link" class="link">Serviços</a>
+      <a routerLink="/contato" routerLinkActive="active-link" class="link">Contato</a>
+    </div>
+  </ng-container>
+</nav>

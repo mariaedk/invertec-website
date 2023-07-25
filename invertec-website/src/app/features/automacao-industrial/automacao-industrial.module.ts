@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { AutomacaoIndustrialRoutingModule } from './automacao-industrial-routing.module';
 import { AutomacaoIndustrialComponent } from './automacao-industrial.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { AutomacaoIndustrialComponent } from './automacao-industrial.component';
   ],
   imports: [
     CommonModule,
-    AutomacaoIndustrialRoutingModule
+    AutomacaoIndustrialRoutingModule,
+    NgOptimizedImage,
+    MatButtonModule
   ]
 })
 export class AutomacaoIndustrialModule { }

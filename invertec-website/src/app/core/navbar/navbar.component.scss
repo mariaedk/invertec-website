@@ -1,0 +1,94 @@
+@import 'abstracts/colors';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+
+    .links {
+      .link {
+        margin-left: 4rem;
+      }
+    }
+
+    .menu-responsive {
+      display: none;
+      font-size: 36px !important;
+
+      .material-symbols-outlined {
+        font-size: 36px !important;
+        color: $texto-secundario;
+      }
+
+      .no-style {
+        color: transparent;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+      }
+    }
+  }
+
+  .responsive-links {
+    display: none;
+  }
+
+  .hide-responsive-links {
+    display: none;
+  }
+
+  .link {
+    color: $texto-secundario;
+  }
+
+  .link:hover {
+    color: $cor-texto;
+    transition: .5s;
+  }
+
+  .active-link {
+    color: $cor-texto;
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+
+  .navbar {
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .content {
+      width: 90% !important;
+
+      .menu-responsive {
+        display: inline-block !important;
+      }
+    }
+
+    .responsive-links {
+      display: flex !important;
+      flex-direction: column;
+      width: 100%;
+
+      .link {
+        padding: 0.8rem;
+      }
+    }
+
+    .links {
+      display: none;
+    }
+
+  }
+}
