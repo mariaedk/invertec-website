@@ -1,0 +1,65 @@
+@import 'abstracts/variables';
+
+.titulo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: $size-xl;
+}
+
+.formulario-mapa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+
+    .formulario {
+      width: 49%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      border: 1px solid black;
+      padding: $size-m;
+
+      .titulo-form {
+        margin-bottom: $size-s;
+      }
+
+      .campos {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        .col-localiz {
+          width: 100%;
+
+          .esp-dir {
+            margin-right: $size-m;
+          }
+
+          .form-field-metade {
+            width: 48%;
+          }
+        }
+
+        .form-field {
+          width: 100%;
+        }
+      }
+    }
+
+    .mapa {
+      width: 49%;
+    }
+  }
+}

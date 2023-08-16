@@ -1,5 +1,8 @@
 @import 'abstracts/colors', 'abstracts/variables';
 
+.titulo-secundario {
+  margin-top: $size-xl;
+}
 
 .titulo-terciario {
   margin-bottom: $size-s;
