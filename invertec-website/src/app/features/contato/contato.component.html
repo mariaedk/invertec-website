@@ -7,71 +7,73 @@
 <section class="formulario-mapa">
   <div class="content">
     <div class="formulario">
-      <div class="titulo-form"><h3>Formulário de contato</h3></div>
+      <div class="titulo-form">
+        <h3>Formulário de contato</h3>
+      </div>
       <div class="campos">
-
-        <mat-form-field class="form-field">
-          <mat-label>Nome</mat-label>
-          <input matInput type="text" [(ngModel)]="nome">
-          <button *ngIf="nome" matSuffix mat-icon-button aria-label="Clear" (click)="nome=''">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-        
-        <mat-form-field class="form-field">
-          <mat-label>E-mail</mat-label>
-          <input matInput type="text" [(ngModel)]="email" placeholder="Ex. email@exemplo.com">
-          <button *ngIf="email" matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-        
-        <mat-form-field class="form-field">
-          <mat-label>Telefone/Celular</mat-label>
-          <input [validation]="false" matInput type="text" [(ngModel)]="telefone" placeholder="Ex. (47) 0000-0000" mask='(00) 00000-0000||(00) 0000-0000'>
-          <button *ngIf="telefone" matSuffix mat-icon-button aria-label="Clear" (click)="telefone=''">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-
-        <mat-form-field class="form-field">
-          <mat-label [(ngModel)]="tipoContato">Tipo de contato</mat-label>
-          <mat-select>
-            <mat-option value="Consumidor">Consumidor</mat-option>
-            <mat-option value="Representante">Representante</mat-option>
-            <mat-option value="Cliente">Cliente</mat-option>
-            <mat-option value="Outros">Outros</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <div class="col-localiz">
-          <mat-form-field class="form-field-metade esp-dir">
-            <mat-label>Cidade</mat-label>
-            <input matInput type="text" [(ngModel)]="cidade" placeholder="Ex. Blumenau">
-            <button *ngIf="cidade" matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+        <form [formGroup]="formContato">
+          <mat-form-field class="form-field">
+            <mat-label>Nome</mat-label>
+            <input formControlName="nome" matInput type="text">
+            <button *ngIf="this.formContato.get('nome')?.value" matSuffix mat-icon-button aria-label="Clear"
+              (click)="this.formContato.get('nome')?.setValue('')">
               <mat-icon>close</mat-icon>
             </button>
           </mat-form-field>
 
-          <mat-form-field class="form-field-metade">
-            <mat-label>Estado</mat-label>
-            <input matInput type="text" [(ngModel)]="estado" placeholder="Ex. SC">
-            <button *ngIf="estado" matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+          <mat-form-field class="form-field">
+            <mat-label>E-mail</mat-label>
+            <input matInput type="text" placeholder="Ex. email@exemplo.com">
+            <button *ngIf="" matSuffix mat-icon-button aria-label="Clear">
               <mat-icon>close</mat-icon>
             </button>
           </mat-form-field>
-        </div>
 
+          <mat-form-field class="form-field">
+            <mat-label>Telefone/Celular</mat-label>
+            <input [validation]="false" matInput type="text" placeholder="Ex. (47) 0000-0000"
+              mask='(00) 00000-0000||(00) 0000-0000'>
+            <button *ngIf="" matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-form-field class="form-field">
+            <mat-label>Tipo de contato</mat-label>
+            <mat-select>
+              <mat-option value="Consumidor">Consumidor</mat-option>
+              <mat-option value="Representante">Representante</mat-option>
+              <mat-option value="Cliente">Cliente</mat-option>
+              <mat-option value="Outros">Outros</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="col-localiz">
+            <mat-form-field class="form-field-metade esp-dir">
+              <mat-label>Cidade</mat-label>
+              <input matInput type="text" placeholder="Ex. Blumenau">
+              <button *ngIf="" matSuffix mat-icon-button aria-label="Clear">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+
+            <mat-form-field class="form-field-metade">
+              <mat-label>Estado</mat-label>
+              <input matInput type="text" placeholder="Ex. SC">
+              <button *ngIf="" matSuffix mat-icon-button aria-label="Clear">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+        </form>
       </div>
     </div>
     <div class="mapa">
       <div class="gallery-holder" id="holder-iframe">
         <iframe
           src="http://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=+Fritz+Spernau,+457&amp;aq=&amp;sll=-14.239424,-53.186502&amp;sspn=53.683227,93.076172&amp;ie=UTF8&amp;hq=&amp;hnear=R.+Fritz+Spernau,+457+-+Fortaleza,+Blumenau+-+Santa+Catarina,+89055-200&amp;t=m&amp;z=14&amp;ll=-26.88438,-49.062616&amp;output=embed"
-          style="margin: 0 0 0 0; padding: 0; border: 0px"
-          width="100%"
-          height="600"
-        ></iframe>
+          style="margin: 0 0 0 0; padding: 0; border: 0px" width="100%" height="600"></iframe>
       </div>
     </div>
   </div>

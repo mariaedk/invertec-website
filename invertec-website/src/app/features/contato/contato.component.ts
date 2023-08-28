@@ -1,5 +1,6 @@
 import { IbgeApiService } from 'src/app/shared/services/ibge-api.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-contato',
@@ -7,22 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contato.component.scss']
 })
 export class ContatoComponent implements OnInit {
-  nome = '';
-  email = '';
-  telefone = '';
-  tipoContato = '';
-  cidade = '';
-  estado = '';
 
-  ufs: any;
+  formContato = this.formBuilder.group({
+    nome: '',
+    email: '',
+    telefone: '',
+    tipoContato: '',
+    cidade: '',
+    estado: '',
+  });
 
-  constructor(private ibdgeService: IbgeApiService) {}
+  ufs = [];
+
+  constructor(private ibdgeService: IbgeApiService, private formBuilder: FormBuilder) {}
 
   ngOnInit() {
 
     this.ibdgeService.getUfs().subscribe(
-      ufs => {
-        this.ufs = ufs;
+      ufs => {       
+          
+        // this.ufs = ufs;
         console.log(this.ufs)
       }
     );
